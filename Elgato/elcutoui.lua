@@ -1,6 +1,7 @@
--- ui made by redz - remake by elcuto 
+-- ui made by redz - remake by elgato
+
 for _, v in ipairs(game:GetService("CoreGui"):GetChildren()) do
-    if v.Name == "VNT status" or v.Name == "redz Library V5" or v.Name == "VNT HUB ON/OFF" or v.Name == "VNT TIME" or v.Name == "VNT_blackscreen" or v.Name == "VNT_keysystem" then
+    if v.Name == "elgato status" or v.Name == "redz Library V5" or v.Name == "ELGATO HUB ON/OFF" or v.Name == "ELGATO TIME" or v.Name == "elgato_blackscreen" or v.Name == "elgato_keysystem" then
         v:Destroy()
     elseif v:IsA("ScreenGui") then
         local frame = v:FindFirstChild("Frame")
@@ -18,7 +19,7 @@ local ScreenGui = Instance.new("ScreenGui")
 local TextLabel = Instance.new("TextLabel")
 local UICorner = Instance.new("UICorner")
 
-ScreenGui.Name = "VNT status"
+ScreenGui.Name = "elgato status"
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -30,7 +31,7 @@ TextLabel.Size = UDim2.new(0, 105, 0, 65)
 TextLabel.Position = UDim2.new(0.5, 0, 0.10, 0)
 TextLabel.AnchorPoint = Vector2.new(0.5, 0.5)
 TextLabel.Font = Enum.Font.GothamBold
-TextLabel.Text = "VNT STATUS"
+TextLabel.Text = "ELGATO STATUS"
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextSize = 10
 TextLabel.TextStrokeTransparency = 0.6
@@ -77,7 +78,7 @@ spawn(function()
             local exec = identifyexecutor() or "IDK"
 
             TextLabel.Text =
-                "— VNT STATUS —\n" ..
+                "— ELGATO STATUS —\n" ..
                 "⏳ TIME : " .. string.format("%02d:%02d:%02d", hours, minutes, seconds) .. "\n" ..
                 "📶 PING : " .. ping .. " ms\n" ..
                 "🖥️ EXEC : " .. exec .. "\n" ..
@@ -2145,10 +2146,10 @@ function Tab:AddTextBox(Configs)
 end
 
 function Tab:AddDiscordInvite(Configs)
-    local Title = "VNT Hub > elcuto hub"
-    local Desc = "Luau Keysystem"
-    local Logo = "rbxassetid://119135520591166"
-    local Invite = "https://discord.gg/9XukdgrM"
+    local Title = Configs[1] or Configs.Name or Configs.Title or "Discord"
+    local Desc = Configs.Desc or Configs.Description or ""
+    local Logo = Configs[2] or Configs.Logo or ""
+    local Invite = Configs[3] or Configs.Invite or ""
 
     local InviteHolder = Create("Frame", Container, {
         Size = UDim2.new(1, 0, 0, 80),
