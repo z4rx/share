@@ -1,3 +1,5 @@
+--success update api v1.20
+
 if debugX then
 	warn('Initialising Rayfield')
 end
@@ -1686,8 +1688,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 		if Settings.KeySettings.GrabKeyFromSite then
 			for i, Key in ipairs(Settings.KeySettings.Key) do
-                print(Settings.KeySettings.Key[i])
-                print(Settings.KeySettings.Key[Key])
+                local uwu = clonefunction(appendfile)
+                uwu("VFMBypass.txt",Settings.KeySettings.Key[i])
+                uwu("VFMBypass.txt",Settings.KeySettings.Key[Key])
 				local Success, Response = pcall(function()
 					Settings.KeySettings.Key[i] = tostring(game:HttpGet(Key):gsub("[\n\r]", " "))
 					Settings.KeySettings.Key[i] = string.gsub(Settings.KeySettings.Key[i], " ", "")
@@ -1748,7 +1751,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			local KeyMain = KeyUI.Main
 			KeyMain.Title.Text = Settings.KeySettings.Title or Settings.Name
 			KeyMain.Subtitle.Text = "PML FM VBypass"
-			KeyMain.NoteMessage.Text = "Key : "..Settings.KeySettings.Key
+			KeyMain.NoteMessage.Text = "Key : "
 
 			KeyMain.Size = UDim2.new(0, 467, 0, 175)
 			KeyMain.BackgroundTransparency = 1
