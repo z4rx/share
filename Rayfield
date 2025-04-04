@@ -1,4 +1,4 @@
---success update api v1.20
+
 
 if debugX then
 	warn('Initialising Rayfield')
@@ -1673,7 +1673,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 			end
 		end
 	end
-
+    Settings.KeySystem = nil
 	if (Settings.KeySystem) then
 		if not Settings.KeySettings then
 			Passthrough = true
